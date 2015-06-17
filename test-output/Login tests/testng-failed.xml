@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Login tests]">
+  <test name="P1 Test(failed)">
+    <classes>
+      <class name="com.launchpad.tests.Login_test">
+        <methods>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="loadPage"/>
+          <include name="signin"/>
+          <include name="fillOutPasswordField"/>
+          <include name="fillOutEmailField"/>
+        </methods>
+      </class> <!-- com.launchpad.tests.Login_test -->
+    </classes>
+  </test> <!-- P1 Test(failed) -->
+</suite> <!-- Failed suite [Login tests] -->
