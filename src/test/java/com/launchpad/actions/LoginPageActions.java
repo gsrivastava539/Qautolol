@@ -26,7 +26,7 @@ public class LoginPageActions {
 
 	
 	public void setText_EmailLogin(String text){
-		System.out.println("test11ad1sss1");
+		System.out.println("test11ad1sss1121111");
 		field_Email.clear();
 		field_Email.sendKeys(text);
 		Assert.assertEquals(field_Email.getAttribute("value"), text);
