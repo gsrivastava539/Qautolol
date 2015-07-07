@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="0" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="115777" started-at="2015-07-07T18:43:59Z" finished-at="2015-07-07T18:45:55Z">
+  <suite name="Default suite" duration-ms="7" started-at="2015-07-07T20:10:46Z" finished-at="2015-07-07T20:10:46Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="115777" started-at="2015-07-07T18:43:59Z" finished-at="2015-07-07T18:45:55Z">
-      <class name="com.launchpad.tests.Login_test">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.launchpad.tests.Login_test@256216b3]" name="setup" is-config="true" duration-ms="14831" started-at="2015-07-07T14:43:59Z" finished-at="2015-07-07T14:44:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="signin()[pri:0, instance:com.launchpad.tests.Login_test@256216b3]" name="signin" duration-ms="100938" started-at="2015-07-07T14:44:14Z" finished-at="2015-07-07T14:45:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- signin -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.launchpad.tests.Login_test@256216b3]" name="teardown" is-config="true" duration-ms="0" started-at="2015-07-07T14:45:55Z" finished-at="2015-07-07T14:45:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- com.launchpad.tests.Login_test -->
+    <test name="Default test" duration-ms="7" started-at="2015-07-07T20:10:46Z" finished-at="2015-07-07T20:10:46Z">
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
