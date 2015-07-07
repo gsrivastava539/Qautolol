@@ -7,22 +7,28 @@ import java.io.IOException;
 
 public class ObjectFileReader {
 
-	
-	private static String Name ;
+
 	static String sFilePath = "src/test/resources/PageObjectRepository/LaunchPad/QA/LoginPage.txt";
 	
 	
 	// In this method i am going to pass the element name and this will read the value of that element name 
 	//??? I still have to figure out how to get the type
 	public static void main(String[] args){
-	
+	 
+		String[] field = textFileReader("field_Password");
 		
-		String field = textFileReader(Name);
+		System.out.println(field[2]);	
+		
+		
+		/*String[] field = textFileReader(field_Email);
+		field.toString();
+		System.out.println(String.valueOf(field).toString());
+		
 		//
-		
+*/		
 	}
 		
-public static String textFileReader(String ElementName){
+public static String[] textFileReader(String ElementName){
 		
 		
 				
@@ -31,6 +37,7 @@ public static String textFileReader(String ElementName){
 		//Create a bufferReader Object
 		BufferedReader textReader= null;
 		//Handling exception using try catch
+		String returnElement = "";
 		try{
 			String sCurrentLine;
 			fr = new FileReader(sFilePath);
@@ -38,13 +45,17 @@ public static String textFileReader(String ElementName){
 			//Reading the file until the file is null
 			
 			while ((sCurrentLine = textReader.readLine()) !=null){
-				if (sCurrentLine.trim().startsWith("#")) {
+				/*if (sCurrentLine.trim().startsWith("#")) {
 					continue;
+				}*/
+				
+				if (sCurrentLine.split(":", 3)[0].equalsIgnoreCase(ElementName)) {
+					returnElement= sCurrentLine;
+					break;
 				}
+				//sCurrentLine = textReader.readLine();
 				
 				
-				
-				System.out.println(sCurrentLine);
 			}
 		} catch (IOException e){
 			e.printStackTrace();
@@ -55,15 +66,15 @@ public static String textFileReader(String ElementName){
 				ex.printStackTrace();
 			}
 		}
-		return Name;
+		
+		
+		return returnElement.split(":", 3);
+		
 		
 				
 		
 	}
 
-	
-	
-	
 	
 	
 }

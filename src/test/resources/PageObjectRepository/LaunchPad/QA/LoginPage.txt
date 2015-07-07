@@ -1,6 +1,6 @@
-#Element name: type: value
+# Element name: type: value
 
-#LoginPage Page objects
+# LoginPage Page objects
 
 field_Email:xpath:.//*[@placeholder='Email']
 field_Password:xpath:.//*[@placeholder='Password']
