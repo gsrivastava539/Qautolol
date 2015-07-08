@@ -2,7 +2,7 @@
 
 # LoginPage Page objects
 
-Title: LoginPageinsidethetextfile
+Title:Login
 
 field_Email:xpath:.//*[@placeholder='Email']
 field_Password:xpath:.//*[@placeholder='Password']

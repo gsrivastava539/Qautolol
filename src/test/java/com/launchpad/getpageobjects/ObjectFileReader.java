@@ -25,7 +25,7 @@ public class ObjectFileReader {
 	}*/
 	
 	
-	public static String[] elementTypeReader(String PageName, String ElementName){
+	public static String[] getPageElementFromFile(String pageName, String ElementName){
 				
 		//Create a FileReader Object
 		FileReader fr = null;
@@ -35,7 +35,7 @@ public class ObjectFileReader {
 		String returnElement = "";
 		try{
 			String sCurrentLine;
-			fr = new FileReader(sFilePath + "LaunchPad" + File.separator + "QA" + File.separator + PageName + ".txt");
+			fr = new FileReader(sFilePath + "LaunchPad" + File.separator + "QA" + File.separator + pageName + ".txt");
 			textReader = new BufferedReader(fr);
 			//Reading the file until the file is null
 			
@@ -60,14 +60,14 @@ public class ObjectFileReader {
 		
 	}
 	
-	public static String[] getPageTitle(String PageName){
+	public static String[] getPageTitleFromFile(String pageName){
 		
 		FileReader fr = null;
 		BufferedReader textReader = null;
 		String returnElement = null;
 		try{
 			String sCurrentline;
-			fr = new FileReader(sFilePath + "LaunchPad" + File.separator + "QA" + File.separator + PageName + ".txt");
+			fr = new FileReader(sFilePath + "LaunchPad" + File.separator + "QA" + File.separator + pageName + ".txt");
 			textReader = new BufferedReader(fr);
 			while ((sCurrentline = textReader.readLine()) != null){
 				if (sCurrentline.split(":", 2)[0].equalsIgnoreCase("Title")
