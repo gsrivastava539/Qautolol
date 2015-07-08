@@ -1,6 +1,7 @@
 package com.launchpad.getpageobjects;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -8,29 +9,23 @@ import java.io.IOException;
 public class ObjectFileReader {
 
 
-	static String sFilePath = "src/test/resources/PageObjectRepository/LaunchPad/QA/LoginPage.txt";
-	
+	static String sFilePath = "src/test/resources/PageObjectRepository/";
+	static String tier;
 	
 	// In this method i am going to pass the element name and this will read the value of that element name 
 	//??? I still have to figure out how to get the type
-	public static void main(String[] args){
-	 
-		String[] field = textFileReader("field_email");
+	
+/*	public static void main (String[] args){
 		
-		System.out.println(field[2]);	
+		//String[] s = getPageTitle("LoginPage");
+		String[] s2 = textFileReader("LoginPage", "loginbutton");
 		
-		
-		/*String[] field = textFileReader(field_Email);
-		field.toString();
-		System.out.println(String.valueOf(field).toString());
-		
-		//
-*/		
-	}
-		
-public static String[] textFileReader(String ElementName){
-		
-		
+		//System.out.println(s[1]);
+		System.out.println(s2[2]);
+	}*/
+	
+	
+	public static String[] elementTypeReader(String PageName, String ElementName){
 				
 		//Create a FileReader Object
 		FileReader fr = null;
@@ -40,21 +35,16 @@ public static String[] textFileReader(String ElementName){
 		String returnElement = "";
 		try{
 			String sCurrentLine;
-			fr = new FileReader(sFilePath);
+			fr = new FileReader(sFilePath + "LaunchPad" + File.separator + "QA" + File.separator + PageName + ".txt");
 			textReader = new BufferedReader(fr);
 			//Reading the file until the file is null
 			
 			while ((sCurrentLine = textReader.readLine()) !=null){
-				/*if (sCurrentLine.trim().startsWith("#")) {
-					continue;
-				}*/
-				
+								
 				if (sCurrentLine.split(":", 3)[0].equalsIgnoreCase(ElementName)) {
 					returnElement= sCurrentLine;
 					break;
 				}
-				//sCurrentLine = textReader.readLine();
-				
 				
 			}
 		} catch (IOException e){
@@ -66,15 +56,37 @@ public static String[] textFileReader(String ElementName){
 				ex.printStackTrace();
 			}
 		}
-		
-		
 		return returnElement.split(":", 3);
 		
+	}
+	
+	public static String[] getPageTitle(String PageName){
 		
-				
+		FileReader fr = null;
+		BufferedReader textReader = null;
+		String returnElement = null;
+		try{
+			String sCurrentline;
+			fr = new FileReader(sFilePath + "LaunchPad" + File.separator + "QA" + File.separator + PageName + ".txt");
+			textReader = new BufferedReader(fr);
+			while ((sCurrentline = textReader.readLine()) != null){
+				if (sCurrentline.split(":", 2)[0].equalsIgnoreCase("Title")
+					|| (sCurrentline.split(":", 2)[0].equalsIgnoreCase("Pagetitle")))
+					{
+					returnElement=sCurrentline;
+				}
+			}
+		} catch (IOException e){
+			e.printStackTrace();
+		}finally{
+			try{
+				if(textReader != null)textReader.close();
+			} catch (IOException er){
+				er.printStackTrace();
+			}
+		}
+		
+		return returnElement.split(":", 2);
 		
 	}
-
-	
-	
 }

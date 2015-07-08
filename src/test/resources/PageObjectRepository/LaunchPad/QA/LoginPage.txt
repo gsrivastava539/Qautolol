@@ -2,6 +2,8 @@
 
 # LoginPage Page objects
 
+Title: LoginPageinsidethetextfile
+
 field_Email:xpath:.//*[@placeholder='Email']
 field_Password:xpath:.//*[@placeholder='Password']
 loginbutton:class:ladda-label
