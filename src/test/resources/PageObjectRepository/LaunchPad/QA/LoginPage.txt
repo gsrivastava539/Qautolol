@@ -1,0 +1,7 @@
+# Element name: type: value
+
+# LoginPage Page objects
+
+field_Email:xpath:.//*[@placeholder='Email']
+field_Password:xpath:.//*[@placeholder='Password']
+loginbutton:class:ladda-label
