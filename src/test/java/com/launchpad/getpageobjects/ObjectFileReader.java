@@ -15,7 +15,7 @@ public class ObjectFileReader {
 	//??? I still have to figure out how to get the type
 	public static void main(String[] args){
 	 
-		String[] field = textFileReader("field_Password");
+		String[] field = textFileReader("field_email");
 		
 		System.out.println(field[2]);	
 		
