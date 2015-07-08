@@ -27,7 +27,7 @@ public class LoginPageActions {
 	
 	public void setText_EmailLogin(String text){
 
-		System.out.println("test11ad1sss112121221111");
+		System.out.println("test");
 
 		System.out.println("test");
 
