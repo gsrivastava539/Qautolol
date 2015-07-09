@@ -7,7 +7,10 @@ import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.Reporter;
+
+
 
 
 
@@ -16,14 +19,20 @@ public class TestSessionInitiator {
 	/*public static void main (String[] args){
 		System.out.println(getBrowser());
 	}*/
-	 WebDriver driver;
-	
+	 protected WebDriver driver;
+	 private WebDriverFactory wdfactory;
 	
 	
 	public TestSessionInitiator(){
-		
+		wdfactory = new WebDriverFactory();
 	}
 	
+	protected void configureBrowser(){
+		driver = wdfactory.getDriver();
+		driver.manage().window().maximize();
+		//EventFiringWebDriver efwd = new EventFiringWebDriver(driver);
+		//driver = efwd;
+	}
 	
 
 	private static  Map<String, String> _getSessionConfig(){
