@@ -6,22 +6,27 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Reporter;
+
+
 
 public class TestSessionInitiator {
 
 	/*public static void main (String[] args){
 		System.out.println(getBrowser());
 	}*/
-	WebDriver driver;
+	 WebDriver driver;
 	
-	public TestSessionInitiator(WebDriver driver){
-		this.driver=driver;
+	
+	
+	public TestSessionInitiator(){
+		
 	}
 	
 	
-	
-	private  Map<String, String> _getSessionConfig(){
+
+	private static  Map<String, String> _getSessionConfig(){
 		String[] configKeys = {"tier","browser"};
 		Map<String, String> config = new HashMap<String, String>();
 		for (String string : configKeys) {
@@ -32,7 +37,7 @@ public class TestSessionInitiator {
 		
 	}
 	
-	public  String getBrowser(){
+	public static  String getBrowser(){
 		String browser = System.getProperty("browser");
 		if (browser == null) {
 			browser = _getSessionConfig().get("browser");
@@ -46,16 +51,20 @@ public class TestSessionInitiator {
 		if (tier == null) {
 			tier = _getSessionConfig().get("tier");
 		}
-		
 		return tier;
 	}
 	
-	
-	public void launchApplication(String applicationpath){
-		Reporter.log("The application URL is :- " + applicationpath, true);
-		Reporter.log("The Browser under test is : -" + getBrowser(), true);
-		driver.get(applicationpath);
+	/*public  void launchApplication(){
+		launchApplication(getYamlValue("app_url"));
+		}*/
+	public void loadbrowser(){
+		driver = new FirefoxDriver();
 	}
 	
+	public  void launchApplication(String applicationpath){
+		Reporter.log("The application URL is :- " + applicationpath, true);
+		Reporter.log("The Browser under test is :- " + getBrowser(), true);
+		driver.get(applicationpath);
+	}
 	
 }

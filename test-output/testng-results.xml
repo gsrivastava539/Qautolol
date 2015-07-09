@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="0" passed="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
+    <line>
+      <![CDATA[The application URL is :- http://qa.macmillanhighered.com/launchpad/myers10e]]>
+    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="7" started-at="2015-07-07T20:10:46Z" finished-at="2015-07-07T20:10:46Z">
+  <suite name="Default suite" duration-ms="13606" started-at="2015-07-09T19:26:24Z" finished-at="2015-07-09T19:26:38Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="7" started-at="2015-07-07T20:10:46Z" finished-at="2015-07-07T20:10:46Z">
+    <test name="Default test" duration-ms="13606" started-at="2015-07-09T19:26:24Z" finished-at="2015-07-09T19:26:38Z">
+      <class name="com.launchpad.tests.Login_test">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.launchpad.tests.Login_test@725bef66]" name="setup" is-config="true" duration-ms="58" started-at="2015-07-09T15:26:24Z" finished-at="2015-07-09T15:26:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="signin()[pri:0, instance:com.launchpad.tests.Login_test@725bef66]" name="signin" duration-ms="13538" started-at="2015-07-09T15:26:24Z" finished-at="2015-07-09T15:26:38Z">
+          <reporter-output>
+            <line>
+              <![CDATA[The application URL is :- http://qa.macmillanhighered.com/launchpad/myers10e]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- signin -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.launchpad.tests.Login_test@725bef66]" name="teardown" is-config="true" duration-ms="0" started-at="2015-07-09T15:26:38Z" finished-at="2015-07-09T15:26:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.launchpad.tests.Login_test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

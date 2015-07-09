@@ -16,18 +16,19 @@ public class YamlReader {
 	
 
 	/*public static void main(String[] args) throws FileNotFoundException{
-		System.out.println(getYamlValue("bookidentifier.calculus"));
+		System.out.println(getData("URL.myers10e"));
+	
 	}*/
 	
-	
-	
-	 public static String getData(String token) throws FileNotFoundException {
-	        return getYamlValue(token);
-	    }
+	public static String getData(String token) {
+        return getYamlValue(token);
+    }
 
-	public static String getYamlValue(String token) throws FileNotFoundException{
+	 
+	public static String getYamlValue(String token) {
 		return getValue(token);
 	}
+	
 	
 	
 	private static String getValue(String token){
