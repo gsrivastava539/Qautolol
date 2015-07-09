@@ -1,6 +1,7 @@
 package com.launchpad.utils;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
@@ -8,18 +9,28 @@ import java.util.Map;
 
 import org.yaml.snakeyaml.Yaml;
 
+@SuppressWarnings("unchecked")
 public class YamlReader {
 
 	static String YamlFilePath = "src/test/resources/testdata/";
 	
 
-	public static void main(String[] args){
+	/*public static void main(String[] args) throws FileNotFoundException{
 		System.out.println(getYamlValue("bookidentifier.calculus"));
+	}*/
+	
+	
+	
+	 public static String getData(String token) throws FileNotFoundException {
+	        return getYamlValue(token);
+	    }
+
+	public static String getYamlValue(String token) throws FileNotFoundException{
+		return getValue(token);
 	}
 	
-
-	@SuppressWarnings("unchecked")
-	private static String getYamlValue(String token){
+	
+	private static String getValue(String token){
 		
 		try{
 		Reader doc = new FileReader(YamlFilePath + File.separator + "LAUNCHPAD" + File.separator + "QA" + "_testdata.yml");
@@ -39,20 +50,15 @@ public class YamlReader {
 		Map<String, Object> mm = parseMap(object, token);
 		String[] str = token.split("\\.");
 		return 	mm.get(str[str.length - 1]).toString();
-				//parseMap(object, token).get(str[str.length - 1]).toString();
-		
-		
+				
 	}
-
-
-	@SuppressWarnings("unchecked")
 	private static Map<String, Object> parseMap(Map<String, Object> object,
 			String token) {
 		// TODO Auto-generated method stub
-		System.out.println("This is the third " + token);
+		//System.out.println("This is the third " + token);
 		if (token.contains(".")) {
 			String[] str = token.split("\\.");
-			object = parseMap((Map<String, Object>) object.get(str[0]), token.replace(str[0] + ".", "123"));
+			object = parseMap((Map<String, Object>) object.get(str[0]), token.replace(str[0] + ".", ""));
 		}
 		return object;
 		

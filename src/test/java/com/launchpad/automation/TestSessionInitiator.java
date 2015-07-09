@@ -1,12 +1,12 @@
 package com.launchpad.automation;
 
+import static com.launchpad.utils.ConfigReader.getConfigProperty;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
-
-import static com.launchpad.utils.ConfigReader.getConfigProperty;
 
 public class TestSessionInitiator {
 
@@ -50,9 +50,6 @@ public class TestSessionInitiator {
 		return tier;
 	}
 	
-	public void launchApplication(){
-		launchApplication(// Get the data from Yaml);
-	}
 	
 	public void launchApplication(String applicationpath){
 		Reporter.log("The application URL is :- " + applicationpath, true);
