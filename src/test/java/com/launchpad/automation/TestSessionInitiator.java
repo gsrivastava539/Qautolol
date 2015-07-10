@@ -19,24 +19,27 @@ public class TestSessionInitiator {
 	/*public static void main (String[] args){
 		System.out.println(getBrowser());
 	}*/
-	 protected WebDriver driver;
-	 private WebDriverFactory wdfactory;
+	 protected  WebDriver driver;
+	 private  WebDriverFactory wdfactory;
+	 
 	
 	
 	public TestSessionInitiator(){
 		wdfactory = new WebDriverFactory();
 	}
 	
-	protected void configureBrowser(){
-		driver = wdfactory.getDriver();
+	
+	
+	protected  void configureBrowser(){
+		driver = wdfactory.getDriver(_getSessionConfig());
 		driver.manage().window().maximize();
 		//EventFiringWebDriver efwd = new EventFiringWebDriver(driver);
 		//driver = efwd;
 	}
 	
 
-	private static  Map<String, String> _getSessionConfig(){
-		String[] configKeys = {"tier","browser"};
+	private static   Map<String, String> _getSessionConfig(){
+		String[] configKeys = {"tier","browser","seleniumserver"};
 		Map<String, String> config = new HashMap<String, String>();
 		for (String string : configKeys) {
 			config.put(string, getConfigProperty("./Config.properties", string));
