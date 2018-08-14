@@ -11,7 +11,7 @@ import org.testng.annotations.DataProvider;
 public class LoginPageActions {
 	
 	public static final String PAGE_TITLE="Macmillan Launchpad: Login";
-	public static final String PAGE_URL="http://qa.macmillanhighered.com/launchpad/hockenbury6e/";
+	public static final String PAGE_URL="";
 	
 	@FindBy(xpath=".//*[@placeholder='Email']") WebElement field_Email;
 	@FindBy(xpath=".//*[@placeholder='Password']") 	WebElement field_Password;
